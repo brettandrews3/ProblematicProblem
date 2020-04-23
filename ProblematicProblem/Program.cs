@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 namespace ProblematicProblem
 {
-
+// INCOMPLETE. SEE CLASS VIDEO FOR ADD'L CORRECTIONS
     public class Program
     {
         Random rng = new Random(); // TODO
@@ -41,7 +41,7 @@ namespace ProblematicProblem
 
             Console.Write("Would you like to see the current list of activities? " +
                 "Sure/No thanks: ");
-            bool seeList = bool.Parse(Console.ReadLine().ToLower() = "sure") ? true : false;
+            bool seeList = (Console.ReadLine() = "Sure") ? true : false;
 
             if (seeList)
             {
@@ -54,7 +54,7 @@ namespace ProblematicProblem
                 Console.WriteLine();
                 Console.Write("Would you like to add any activities before we " +
                     "generate one? yes/no: ");
-                bool addToList = bool.Parse(Console.ReadLine());
+                bool addToList = (Console.ReadLine());
                 Console.WriteLine();
 
                 while (addToList)
