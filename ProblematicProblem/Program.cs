@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 // ProblematicProblem
 
-    public class Program
+public class Program
     {
-        Random rng;        
+        Random randomNumber;        
         static bool cont = true;
     static List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling",
             "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
@@ -37,7 +38,6 @@ using System.Linq;
                 {
                     Console.Write($"{activity} ");
                     Thread.Sleep(250);
-                    // What the hell is Thread?
                 }
 
                 Console.WriteLine();
@@ -52,7 +52,7 @@ using System.Linq;
 
                     activities.Add(userAddition);
 
-                    foreach (string activity activities)
+                    foreach (string activity in activities)
                     {
                         Console.Write($"{activity} ");
                         Thread.Sleep(250);
@@ -74,7 +74,7 @@ using System.Linq;
                     Thread.Sleep(500);
                 }
 
-                Console.WriteLine()
+                Console.WriteLine();
 
                 Console.Write("Choosing your random activity");
 
@@ -84,25 +84,27 @@ using System.Linq;
                     Thread.Sleep(500);
                 }
 
-                Console.WriteLine()
+                Console.WriteLine();
 
-                int randomNumber = rng.Next(activities.Count);
+                int randomNumber = this.randomNumber.Next(activities.Count);
+                // Does "this" serve a purpose in declaring a variable?
 
                 string randomActivity = activities[randomNumber]
 
-                if (userAge > 21 && randomActivity == "Wine Tasting")
+                if(var userAge > 21 && randomActivity == "Wine Tasting")
                 {
                     Console.WriteLine($"Oh no! Looks like you are too young to do {randomActivity}");
                     Console.WriteLine("Pick something else!");
 
                     activities.Remove(randomActivity);
 
-                    string randomNumber = rng.Next(activities.Count);
+                    string randomNumber = this.randomNumber.Next(activities.Count);
 
                     string randomActivity = activities[randomNumber];
                 }
 
-                Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ")
+                Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! " +
+                $"Is this ok or do you want to grab another activity? Keep/Redo: ");
                 ConsoleWriteLine();
                 bool cont = bool.Parse(Console.ReadLine());
             }
