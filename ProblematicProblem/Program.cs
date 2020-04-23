@@ -1,26 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+// ProblematicProblem
 
-ProblematicProblem
-{
-    Program class
+    public class Program
     {
         Random rng;        
         static bool cont = true;
-        static List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" }
+    static List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling",
+            "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
 
         static void Main(string[] args)
         {
-            Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ")
+        Console.Write("Hello, welcome to the random activity generator! " +
+            "\nWould you like to generate a random activity? yes/no: ");
             bool cont = bool.Parse(Console.ReadLine());
 
             Console.WriteLine();
 
-            Console.Write("We are going to need your information first! What is your name? ");
+            Console.Write("We are going to need your information first! What is your name?");
             string userName = Console.ReadLine();
 
             Console.WriteLine();
 
-            Console.Write("What is your age? ");
-            int userAge = Console.ReadLine();
+            Console.Write("What is your age?");
+            var userAge = Console.ReadLine();
 
             Console.WriteLine();
 
@@ -33,6 +37,7 @@ ProblematicProblem
                 {
                     Console.Write($"{activity} ");
                     Thread.Sleep(250);
+                    // What the hell is Thread?
                 }
 
                 Console.WriteLine();
@@ -103,4 +108,5 @@ ProblematicProblem
             }
         }
     }
-}}
+
+
