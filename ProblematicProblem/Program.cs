@@ -1,19 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-// ProblematicProblem
+namespace ProblematicProblem
+{
 
-public class Program
+    public class Program
     {
-        Random randomNumber;        
         static bool cont = true;
-    static List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling",
+        static List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling",
             "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
 
         static void Main(string[] args)
         {
-        Console.Write("Hello, welcome to the random activity generator! " +
-            "\nWould you like to generate a random activity? yes/no: ");
+            Random rng = new Random();
+
+            Console.Write("Hello, welcome to the random activity generator! " +
+                "\nWould you like to generate a random activity? yes/no: ");
             bool cont = bool.Parse(Console.ReadLine());
 
             Console.WriteLine();
@@ -65,7 +67,7 @@ public class Program
                     // I'm not sure what to do with this
                 }
             }
-            
+
             while (cont)
             {
                 Console.Write("Connecting to the database");
@@ -88,19 +90,19 @@ public class Program
 
                 Console.WriteLine();
 
-                int randomNumber = this.randomNumber.Next(activities.Count);
+                int randomNumber = this.rng.Next(activities.Count);
                 // Does "this" serve a purpose in declaring a variable?
 
-                string randomActivity = activities[randomNumber]
+                string randomActivity = activities[randomNumber];
 
-                if(var userAge < 21 && randomActivity == "Wine Tasting")
+                if (var userAge < 21 && randomActivity == "Wine Tasting")
                 {
                     Console.WriteLine($"Oh no! Looks like you are too young to do {randomActivity}");
                     Console.WriteLine("Pick something else!");
 
                     activities.Remove(randomActivity);
 
-                    int randomNumber = this.randomNumber.Next(activities.Count);
+                    int randomNumber = this.rng.Next(activities.Count);
 
                     string randomActivity = activities[randomNumber];
                 }
@@ -112,5 +114,5 @@ public class Program
             }
         }
     }
-
+}
 
